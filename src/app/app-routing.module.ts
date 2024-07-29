@@ -10,10 +10,10 @@ import { ConversionComponent } from './conversion/conversion.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuard] },  // Protege la ruta
-  { path: 'fecha', component: DateCalculatorComponent }, // Ruta para el componente DateCalculatorComponent
-  { path: 'formulario', component: FormComponent }, // Ruta para FormComponent
-  { path: 'conversion', component: ConversionComponent } // Ruta para FormComponent
+  { path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuard] },  
+  { path: 'fecha', component: DateCalculatorComponent,canActivate: [AuthGuard] }, 
+  { path: 'formulario', component: FormComponent }, 
+  { path: 'conversion', component: ConversionComponent } 
 
 ];
 

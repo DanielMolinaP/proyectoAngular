@@ -35,9 +35,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule ,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,  // Asegúrate de que ReactiveFormsModule esté aquí
+    ReactiveFormsModule,  
     HttpClientModule,
-    BrowserAnimationsModule,  // Importa BrowserAnimationsModule
+    BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
