@@ -1,0 +1,37 @@
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+
+  .form-signin {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    mat-form-field {
+      margin-bottom: 0.5rem; // Reduce el espacio entre los campos
+
+      .mat-form-field-wrapper {
+        padding-bottom: 0.25rem; // Espacio para el mensaje de error
+      }
+
+      .mat-input-element {
+        padding-top: 1rem; // Aumenta el padding superior
+        height: 3rem; // Ajusta la altura del input si es necesario
+        font-size: 1rem; // Ajusta el tamaño de fuente para que sea más legible
+      }
+
+      .mat-error {
+        margin-top: 0.25rem; // Espacio entre input y error
+        font-size: 0.875em; // Tamaño de fuente del error
+      }
+    }
+
+    button[type="submit"] {
+      margin-top: 1rem;
+    }
+  }
+
+  .alert {
+    text-align: center;
+  }
+}

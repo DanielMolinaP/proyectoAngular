@@ -1,0 +1,22 @@
+// welcome.component.scss
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .welcome-title {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    max-width: 300px;
+  }
+  
+  .btn {
+    margin-top: 10px;
+  }
+  

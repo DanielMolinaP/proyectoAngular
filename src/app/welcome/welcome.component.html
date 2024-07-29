@@ -1,0 +1,18 @@
+<!-- welcome.component.html -->
+<div class="welcome-container text-center">
+  <h1 class="welcome-title">¡Bienvenido,</h1>
+
+  <!-- Mostrar el campo de entrada y el botón solo si no se ha ingresado el nombre -->
+  <ng-container *ngIf="!submittedName">
+    <input type="text" class="form-control mb-3" [(ngModel)]="name" placeholder="Ingrese su nombre">
+    <button type="button" class="btn btn-primary" (click)="submitName()">
+      Guardar Nombre
+    </button>
+  </ng-container>
+
+  <!-- Mostrar el nombre ingresado si ya ha sido ingresado -->
+  <ng-container *ngIf="submittedName">
+    <h1 class="text-center">{{ submittedName }}!</h1>
+    <button (click)="logout()" class="btn btn-danger">Cerrar sesión</button>
+  </ng-container>
+</div>

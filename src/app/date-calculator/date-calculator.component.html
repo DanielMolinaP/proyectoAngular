@@ -1,0 +1,28 @@
+<div class="center-container">
+<div class="date-calculator">
+    <h2>Calculadora de Fecha</h2>
+    <form [formGroup]="dateForm" (ngSubmit)="calculateDate()">
+      <div>
+        <label for="date">Selecciona una fecha:</label>
+        <input type="date" id="date" formControlName="selectedDate" required>
+      </div>
+      <div>
+        <label for="unit">Selecciona la unidad:</label>
+        <select id="unit" formControlName="unit">
+          <option value="days">Días</option>
+          <option value="months">Meses</option>
+          <option value="years">Años</option>
+        </select>
+      </div>
+      <div>
+        <label for="amount">Cantidad a sumar:</label>
+        <input type="number" id="amount" formControlName="amount" required>
+      </div>
+      <button type="submit">Calcular</button>
+    </form>
+    <div *ngIf="result">
+      <p>El resultado fue: {{ result | date: 'dd MMM yyyy' }}</p>
+    </div>
+  </div>
+</div>
+  

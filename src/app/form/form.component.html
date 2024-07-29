@@ -1,0 +1,57 @@
+<div class="center-container">
+<div class="form-container">
+    <h2>Formulario de Información Personal</h2>
+    <form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="nombres">Nombres:</label>
+        <input id="nombres" formControlName="nombres" required>
+        <mat-error *ngIf="nombres.invalid && nombres.touched">
+          {{ getErrorMessage(nombres, 'nombres') }}
+        </mat-error>
+      </div>
+  
+      <div>
+        <label for="apellidos">Apellidos:</label>
+        <input id="apellidos" formControlName="apellidos" required>
+        <mat-error *ngIf="apellidos.invalid && apellidos.touched">
+          {{ getErrorMessage(apellidos, 'apellidos') }}
+        </mat-error>
+      </div>
+  
+      <div>
+        <label for="fumas">¿Fumas?:</label>
+        <select id="fumas" formControlName="fumas" required>
+          <option [ngValue]="true">Sí</option>
+          <option [ngValue]="false">No</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="lectura">¿Practicas lectura actualmente?:</label>
+        <select id="lectura" formControlName="lectura" (change)="toggleLibrosField()" required>
+          <option [ngValue]="true">Sí</option>
+          <option [ngValue]="false">No</option>
+        </select>
+      </div>
+  
+      <div formArrayName="libros" *ngIf="personalForm.get('lectura')?.value">
+        <label>Libros leídos en los últimos tres meses:</label>
+        <button type="button" (click)="addLibro()">Agregar Libro</button>
+        <div *ngFor="let libro of libros.controls; let i = index">
+          <input [formControlName]="i">
+          <button type="button" (click)="removeLibro(i)">Eliminar</button>
+        </div>
+      </div>
+  
+      <div>
+        <label for="estadoCivil">Estado Civil:</label>
+        <select id="estadoCivil" formControlName="estadoCivil">
+          <option *ngFor="let estado of estadoCivilList" [value]="estado.value">{{ estado.display }}</option>
+        </select>
+      </div>
+  
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+  
